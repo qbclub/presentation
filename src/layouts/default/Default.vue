@@ -44,8 +44,17 @@ let years = ref([
     // color: 'grey',
     year: 'июнь 2021',
     title: `Городская сессия <br/> (инициатор ТВЭЛ)`,
-    description: "трансофрмация сознания",
+    description: "",
     path: '/',
+
+  },
+  {
+    color: 'cyan',
+    // color: 'grey',
+    year: '',
+    title: `Трансформация сознания`,
+    description: "",
+    path: '/s1_1',
 
   },
 

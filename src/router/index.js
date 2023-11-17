@@ -1,5 +1,5 @@
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
@@ -11,6 +11,12 @@ const routes = [
         path: '',
         name: 'S1',
         component: () => import('@/views/S1.vue'),
+
+      },
+      {
+        path: '/s1_1',
+        name: 'S1_1',
+        component: () => import('@/views/S1_1.vue'),
 
       },
       {
@@ -39,17 +45,13 @@ const routes = [
         name: 'S6',
         component: () => import('@/views/S6.vue'),
       },
-      {
-        path: '/s7',
-        name: 'S7',
-        component: () => import('@/views/S7.vue'),
-      },
+   
     ],
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes,
 })
 
