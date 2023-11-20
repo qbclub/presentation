@@ -1,7 +1,7 @@
 <template>
-    <div style="height: 100%;"  class="d-flex align-center pa-8">
-        <v-img src="https://about-planet.ru/images/evropa/strana/shvecaria/shveycaria1.jpg" width="100%" cover>
-          
-        </v-img>
+    <div style="height: 100%;" class="pt-4 pb-4">
+
+       <img src="@/assets/images/s_5.jpg" style="max-height: 95%; max-width: 100%;;" >
+
     </div>
 </template>

@@ -43,7 +43,7 @@ let years = ref([
     color: 'cyan',
     // color: 'grey',
     year: 'июнь 2021',
-    title: `Городская сессия <br/> (инициатор ТВЭЛ)`,
+    title: `Городская сессия`,
     description: "",
     path: '/',
 
@@ -54,7 +54,7 @@ let years = ref([
     year: '',
     title: `Трансформация сознания`,
     description: "",
-    path: '/s1_1',
+    path: '/s2',
 
   },
 
@@ -64,7 +64,7 @@ let years = ref([
     year: 'февраль 2022',
     title: "Cоздание Союза Смарт Глазов",
     description: "",
-    path: '/s2',
+    path: '/s3',
 
   },
   {
@@ -72,7 +72,7 @@ let years = ref([
     year: 'апрель 2022',
     title: "Команда туристической платформы",
     description: "",
-    path: '/s3',
+    path: '/s4',
 
   },
   {
@@ -80,7 +80,7 @@ let years = ref([
     year: 'май 2023',
     title: `Туристическая платформа <br/> "ГОРОДА И ВЕСИ"`,
     description: "gorodaivesi.ru",
-    path: '/s4',
+    path: '/s5',
 
   },
   {
@@ -88,7 +88,7 @@ let years = ref([
     year: 'сентябрь 2023',
     title: "Подключение партнеров",
     description: "совместные проекты и интеграция",
-    path: '/s5',
+    path: '/s6',
 
   },
   {
@@ -96,7 +96,7 @@ let years = ref([
     year: 'ноябрь 2023',
     title: "Экскурсия",
     description: "шагая по улице Т.Барамзиной",
-    path: '/s6',
+    path: '/s7',
 
   },
 ])
@@ -129,7 +129,8 @@ onMounted(() => {
   <v-app style="height:100dvh">
     <v-main style="height:90dvh">
       <v-row style="height: 100%;">
-        <v-col cols="5" class="d-md-flex justify-center align-center d-none " style="height: 100%;">
+        <v-col cols="5" class="d-md-flex justify-center align-center d-none flex-column" style="height: 100%;">
+          <h2>От наставника к наставничеству</h2>
           <div class="pa-8" style="max-height: 92dvh; overflow: auto;">
             <v-timeline align="start" side="end">
               <v-timeline-item v-for="(year, i) in years" :key="i" :dot-color="colorForDot(i)"
@@ -152,21 +153,23 @@ onMounted(() => {
             </v-timeline>
           </div>
         </v-col>
-        <v-col style="max-height: 100dvh; overflow: auto;" cols="12" md="7">
+        <v-col style="max-height: 100dvh; overflow: hidden;" cols="12" md="7">
           <h3 class="font-weight-bold active text-center" v-if="!mdAndUp">
             <span v-html="years[activeIndex].title"></span>
-            <p class="text-caption">{{years[activeIndex].year}}</p>
+            <p class="text-caption">{{ years[activeIndex].year }}</p>
           </h3>
+          <div class="d-flex justify-center align-center" style="height: 100%;">
+            <router-view />
+          </div>
 
-          <router-view />
         </v-col>
       </v-row>
     </v-main>
     <v-footer class="d-flex justify-center" absolute height="80">
-      <v-btn class="ma-1" @click="back()" v-if="activeIndex!=0">
+      <v-btn class="ma-1" @click="back()" v-if="activeIndex != 0">
         назад
       </v-btn>
-      <v-btn class="ma-1" @click="forward()" v-if="activeIndex!=years.length-1">
+      <v-btn class="ma-1" @click="forward()" v-if="activeIndex != years.length - 1">
         вперед
       </v-btn>
     </v-footer>

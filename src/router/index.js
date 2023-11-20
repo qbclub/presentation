@@ -14,12 +14,6 @@ const routes = [
 
       },
       {
-        path: '/s1_1',
-        name: 'S1_1',
-        component: () => import('@/views/S1_1.vue'),
-
-      },
-      {
         path: '/s2',
         name: 'S2',
         component: () => import('@/views/S2.vue'),
@@ -29,6 +23,7 @@ const routes = [
         path: '/s3',
         name: 'S3',
         component: () => import('@/views/S3.vue'),
+
       },
       {
         path: '/s4',
@@ -44,6 +39,11 @@ const routes = [
         path: '/s6',
         name: 'S6',
         component: () => import('@/views/S6.vue'),
+      },
+      {
+        path: '/s7',
+        name: 'S7',
+        component: () => import('@/views/S7.vue'),
       },
    
     ],
