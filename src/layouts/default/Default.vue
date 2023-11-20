@@ -166,10 +166,10 @@ onMounted(() => {
       </v-row>
     </v-main>
     <v-footer class="d-flex justify-center" absolute height="80">
-      <v-btn class="ma-1" @click="back()" v-if="activeIndex != 0">
+      <v-btn class="ma-1" @click="back()"  :disabled="!(activeIndex != 0)">
         назад
       </v-btn>
-      <v-btn class="ma-1" @click="forward()" v-if="activeIndex != years.length - 1">
+      <v-btn class="ma-1" @click="forward()"  :disabled="!(activeIndex != years.length - 1)">
         вперед
       </v-btn>
     </v-footer>
